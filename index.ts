@@ -2,8 +2,8 @@ import Jiter from "@jiter/node";
 import * as dayjs from "dayjs";
 
 Jiter.init({
-  apiKey: "578fcffe-4fc7-4fc1-bca5-59c4ac0787fc",
-  signingSecret: "YOUR_SIGNING_SECRET",
+  apiKey: "YOUR_API_KEY",
+  signingSecret: "YOUR_SIGNING_SECRET", // https://docs.jiter.dev/verifying-signatures
 });
 
 const main = async () => {
@@ -19,8 +19,7 @@ const main = async () => {
 
     console.log(`Sending event...`);
     await Jiter.Events.createEvent({
-      destination:
-        "https://llcjwn3j7t627y4o6wryye4pp40zfcvm.lambda-url.us-east-1.on.aws/",
+      destination: "YOUR_URL",
       payload: JSON.stringify(payload),
       scheduledTime,
     });
