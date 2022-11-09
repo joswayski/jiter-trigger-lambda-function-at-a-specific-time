@@ -8,13 +8,13 @@ Make sure you have installed `typescript` and the `aws-cdk` globally. You can fi
 
 1. Install dependencies
 
-   > npm i
+   > npm install
 
 2. Deploy the lambda function
 
-> cdk deploy
+   > cdk deploy
 
-3. Get your API key from [https://app.jiter.dev](https://app.jiter.dev)
+3. Get your API key from [https://jiter.dev](https://jiter.dev)
 
 4. Modify the `index.ts` file with your API key and destination URL
 
