@@ -12,11 +12,21 @@ const main = async () => {
       action: "Email.Welcome",
       userId: "87",
     };
+
+    const now = dayjs();
+    console.log(`Now: ${now.toISOString()}`);
+
+    const scheduledTime = now.add(10, "seconds").toISOString();
+    console.log(`Scheduled time: ${scheduledTime}`);
+
+    console.log(`Sending event...`);
     await Jiter.Events.createEvent({
-      destination: "YOUR_LAMBDA_URL",
+      destination: "YOUR_URL",
       payload: JSON.stringify(payload),
-      scheduledTime: dayjs().add(10, "seconds").toISOString(),
+      scheduledTime,
     });
+
+    console.log(`Sent!`);
   } catch (error) {
     console.error(error);
   }

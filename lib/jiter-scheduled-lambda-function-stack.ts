@@ -4,12 +4,10 @@ import { Construct } from "constructs";
 import { NodejsFunction } from "aws-cdk-lib/aws-lambda-nodejs";
 import {
   Runtime,
-  CfnUrl,
   FunctionUrlAuthType,
   FunctionUrl,
 } from "aws-cdk-lib/aws-lambda";
-import { Cors } from "aws-cdk-lib/aws-apigateway";
-import { AnyPrincipal } from "aws-cdk-lib/aws-iam";
+import { CfnOutput } from "aws-cdk-lib";
 
 export class JiterScheduledLambdaFunctionStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -29,6 +27,10 @@ export class JiterScheduledLambdaFunctionStack extends cdk.Stack {
     const functionUrl = new FunctionUrl(this, "MyFunctionUrl", {
       authType: FunctionUrlAuthType.NONE,
       function: myScheduledFunction,
+    });
+
+    new CfnOutput(this, "URLValue", {
+      value: functionUrl.url,
     });
   }
 }
