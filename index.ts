@@ -6,11 +6,13 @@ Jiter.init({
   signingSecret: "YOUR_SIGNING_SECRET",
 });
 
+
 const main = async () => {
   try {
     const payload = {
-      action: "Email.Welcome",
+      action: "Appointment.Payout",
       userId: "87",
+      amount: 8950
     };
 
     const now = dayjs();
