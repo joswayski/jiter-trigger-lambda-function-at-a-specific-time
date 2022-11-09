@@ -6,13 +6,17 @@ Make sure you have installed `typescript` and the `aws-cdk` globally. You can fi
 
 ### Steps
 
-1. Deploy the lambda function
+1. Install dependencies
 
-   > cdk deploy
+   > npm i
 
-2. Get your API key from [https://app.jiter.dev](https://app.jiter.dev)
+2. Deploy the lambda function
 
-3. Modify the `index.ts` file with your API key and destination URL
+> cdk deploy
 
-4. Run the app to schedule your event
+3. Get your API key from [https://app.jiter.dev](https://app.jiter.dev)
+
+4. Modify the `index.ts` file with your API key and destination URL
+
+5. Run the app to schedule your event
    > npx ts-node index.ts

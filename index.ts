@@ -2,28 +2,25 @@ import Jiter from "@jiter/node";
 import * as dayjs from "dayjs";
 
 Jiter.init({
-  apiKey: "YOUR_API_KEY",
+  apiKey: "578fcffe-4fc7-4fc1-bca5-59c4ac0787fc",
   signingSecret: "YOUR_SIGNING_SECRET",
 });
-
 
 const main = async () => {
   try {
     const payload = {
       action: "Appointment.Payout",
       userId: "87",
-      amount: 8950
+      amount: 8950,
     };
 
     const now = dayjs();
-    console.log(`Now: ${now.toISOString()}`);
-
     const scheduledTime = now.add(10, "seconds").toISOString();
-    console.log(`Scheduled time: ${scheduledTime}`);
 
     console.log(`Sending event...`);
     await Jiter.Events.createEvent({
-      destination: "YOUR_URL",
+      destination:
+        "https://llcjwn3j7t627y4o6wryye4pp40zfcvm.lambda-url.us-east-1.on.aws/",
       payload: JSON.stringify(payload),
       scheduledTime,
     });
