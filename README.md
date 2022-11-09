@@ -1,16 +1,18 @@
-# Schedule a Lambda Function with Jiter
+# Trigger a Lambda Function at a Specific Time with Jiter
 
-#### Prerequisites
+### Prerequisites
 
-- Make sure you have installed `typescript` and the `aws-cdk` globally. You can find instructions for the AWS CDK [here](https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html)
+Make sure you have installed `typescript` and the `aws-cdk` globally. You can find instructions for the AWS CDK [here](https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html)
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+### Steps
 
-## Useful commands
+1. Deploy the lambda function
 
-- `npm run build` compile typescript to js
-- `npm run watch` watch for changes and compile
-- `npm run test` perform the jest unit tests
-- `cdk deploy` deploy this stack to your default AWS account/region
-- `cdk diff` compare deployed stack with current state
-- `cdk synth` emits the synthesized CloudFormation template
+   > cdk deploy
+
+2. Get your API key from [https://app.jiter.dev](https://app.jiter.dev)
+
+3. Modify the `index.ts` file with your API key and destination URL
+
+4. Run the app to schedule your event
+   > npx ts-node index.ts
