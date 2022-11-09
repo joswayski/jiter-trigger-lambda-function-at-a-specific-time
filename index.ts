@@ -1,4 +1,3 @@
-import axios from "axios";
 import Jiter from "@jiter/node";
 import * as dayjs from "dayjs";
 
